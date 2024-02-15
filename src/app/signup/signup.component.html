@@ -1,0 +1,121 @@
+<!-- Conteneur du form : carré au centre de la page -->
+<div class="flex flex-row h-screen">
+    <div class="flex-shrink-0 w-1/2 h-full">
+        <!-- Ajoute ici ton élément image -->
+        <img src="https://lv2-cdn.azureedge.net/twice/20200601_3.jpg" alt="Image"
+            class="w-full h-full object-cover">
+    </div>
+
+    <div class="flex-shrink-0 w-1/2 p-8 bg-white">
+        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <!-- Prénom et Nom -->
+            <div class="mb-4 flex">
+                <div class="mr-2 w-1/2">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="firstName">
+                        First name
+                    </label>
+                    <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    [(ngModel)]="person.firstName" [ngModelOptions]="{standalone: true}" id="firstName" type="text" placeholder="First name">
+                </div>
+                <div class="ml-2 w-1/2">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="lastName">
+                        Last name
+                    </label>
+                    <input
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        [(ngModel)]="person.lastName" [ngModelOptions]="{standalone: true}" id="lastName" type="text" placeholder="Last name">
+                </div>
+            </div>
+            <!-- Phone and email -->
+            <div class="mb-4 flex">
+                <div class="mr-2 w-1/2">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">
+                        Phone
+                    </label>
+                    <input
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        [(ngModel)]="person.phone" [ngModelOptions]="{standalone: true}" id="phone" type="text" placeholder="Phone">
+                </div>
+                <div class="ml-2 w-1/2">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                        Email
+                    </label>
+                    <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    [(ngModel)]="person.email" [ngModelOptions]="{standalone: true}" id="email" type="email" placeholder="Email">
+                
+                </div>
+            </div>
+            <!-- Code postal et Pays -->
+            <div class="mb-4 flex">
+                <div class="mr-2 w-1/2">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="postalCode">
+                        Postal Code
+                    </label>
+                    <input
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        [(ngModel)]="person.postalCode" [ngModelOptions]="{standalone: true}" id="postalCode" type="text" placeholder="Postal code">
+                </div>
+                <div class="ml-2 w-1/2">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="city">
+                        City
+                    </label>
+                    <input
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        [(ngModel)]="person.city" [ngModelOptions]="{standalone: true}" id="city" type="text" placeholder="City">
+                </div>
+            </div>
+            <!-- Ville et Civilité -->
+            <div class="mb-4 flex">
+                <div class="mr-2 w-1/2">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="country">
+                        Country
+                    </label>
+                    <input
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        [(ngModel)]="person.country" [ngModelOptions]="{standalone: true}" id="country" type="text" placeholder="Country">
+                </div>
+                <div class="ml-2 w-1/2">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="gender">
+                        Gender
+                    </label>
+                    <select
+                        class="block appearance-none w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        id="gender" [(ngModel)]="person.gender" name="gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="ac-130 combat helicopter">AC-130 combat helicopter</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>                
+            </div>
+            <!-- login -->
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="login">
+                    Login
+                </label>
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    [(ngModel)]="person.login" [ngModelOptions]="{standalone: true}" id="login" type="text" placeholder="Login">
+            </div>
+            <!-- Password -->
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                    Mot de passe
+                </label>
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    [(ngModel)]="person.password" [ngModelOptions]="{standalone: true}" id="password" type="password" placeholder="******************">
+            </div>
+
+            <!-- Bouton d'inscription, call ToRegistrationRecap -->
+            <div class="flex items-center justify-between">
+                <button (click)="onSignUp()" class="bg-black text-white font-bold py-2 px-4 rounded">
+                    Sign Up
+                </button>
+                <div *ngIf="errorMessage" class="text-red-500 text-xs">{{ errorMessage }}</div>
+            </div>
+        </form>
+    </div>
+</div>

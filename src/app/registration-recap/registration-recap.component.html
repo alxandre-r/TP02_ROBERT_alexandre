@@ -1,0 +1,33 @@
+<div class="flex flex-row h-screen">
+    <div class="flex-shrink-0 w-1/2 h-full">
+        <img src="https://lv2-cdn.azureedge.net/twice/20200601_3.jpg" alt="Image"
+            class="w-full h-full object-cover">
+    </div>
+
+    <div class="flex-shrink-0 w-1/2 p-8 bg-white">
+        <!-- Affichage des données après inscription -->
+        <div class="mt-4">
+            <h2 class="text-2xl font-bold mb-4">Registration Recap : </h2>
+            <p><strong>First name:</strong> {{ person?.firstName }}</p>
+            <p><strong>Last name:</strong> {{ person?.lastName }}</p>
+            <p><strong>Phone:</strong> {{ person?.phone }}</p>
+            <p><strong>Email:</strong> {{ person?.email }}</p>
+            <p><strong>Postal code:</strong> {{ person?.postalCode }}</p>
+            <p><strong>City:</strong> {{ person?.city }}</p>
+            <p><strong>Country:</strong> {{ person?.country }}</p>
+            <p><strong>Gender:</strong> {{ person?.gender }}</p>
+            <p><strong>Login:</strong> {{ person?.login }}</p>
+            <p><strong>Password:</strong> {{ person?.password }}</p>
+
+            <!-- Bouton de confirmation et de retour -->
+            <div class="flex items-center justify-between mt-6">
+                <button class="bg-black text-white font-bold py-2 px-4 rounded" (click)="confirmRegistration()">
+                    Confirm
+                </button>
+                <button class="bg-gray-500 text-white font-bold py-2 px-4 rounded" (click)="goBackToSignup()">
+                    No, there's a mistake
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

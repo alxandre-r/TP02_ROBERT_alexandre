@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.login-button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+  
+.login-button svg {
+    width: 30px;
+    height: 30px;
+}
+.login-button a {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-left: 15px;
+}
